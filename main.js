@@ -81,7 +81,7 @@ function draw(){
 
 
 
-//function reset when ball does notcame in the contact of padde
+//function reset when ball does notcame in the contact of paddel
 function reset(){
    ball.x = width/2+100,
    ball.y = height/2+100;
@@ -186,4 +186,14 @@ function gotPoses(results){
     rightwristSCORE = results[0].pose.keypoints[10].score;
     console.log("rightwristX = "+rightwristX+" ,rightwristY = "+rightwristY+" ,rightwristSCORE = "+rightwristSCORE);
   }
+}
+function preload(){
+  ball_touch_paddel = loadSound("ball_touch_paddel.wav");
+  missed = loadSound("missed.wav");
+}
+function restart() {
+  ball.x = width/2+100,
+  ball.y = height/2+100;
+  ball.dx=3;
+  ball.dy =3;
 }
